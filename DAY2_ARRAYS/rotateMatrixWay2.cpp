@@ -26,8 +26,8 @@ void rotated(vector<vector<int>> &matrix)
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < i; j++) // j < i is needed becuase otherwise it will
-        // swap the elements again
         {
+            // swap the elements again
             swap(matrix[i][j], matrix[j][i]);
         }
     }

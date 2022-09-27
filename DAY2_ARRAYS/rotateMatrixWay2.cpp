@@ -3,7 +3,7 @@
 ?Problem Statement: Given a matrix, your task is to rotate the matrix 90 degrees clockwise.
 !https://takeuforward.org/data-structure/rotate-image-by-90-degree/
 ?Note: Rotate matrix 90 degrees anticlockwise
-
+!https://takeuforward.org/data-structure/transpose-a-matrix-program-01-space/
 ?Examples:
 
 ?Example 1:

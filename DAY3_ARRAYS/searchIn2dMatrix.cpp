@@ -67,3 +67,8 @@ int main()
     cout << boolalpha << result << endl;
     return 0;
 }
+/**
+ * https://www.geeksforgeeks.org/search-in-row-wise-and-column-wise-sorted-matrix/
+ * Time Complexity: O(N), Only one traversal is needed, i.e, i from 0 to n and j from n-1 to 0 with at most 2*N steps. The above approach will also work for the M x N matrix (not only for N x N). Complexity would be O(M + N)
+Auxiliary Space: O(1), No extra space is required
+*/

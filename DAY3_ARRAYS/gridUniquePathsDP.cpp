@@ -43,3 +43,8 @@ int main()
     cout << "The total number of Unique Paths are " << totalCount << endl;
     return 0;
 }
+/**
+ *
+ * Time Complexity: O(M*N) – Due to nested for loops.
+Auxiliary Space : O(M*N) – We have used a 2D array of size MxN.
+*/

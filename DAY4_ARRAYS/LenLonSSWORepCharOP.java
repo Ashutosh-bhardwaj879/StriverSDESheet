@@ -53,3 +53,16 @@ class LenLonSSWORepCharOP {
         return maxLen;
     }
 }
+/*
+ * Time Complexity: O( N )
+ *
+ * Space Complexity: O(N) where N represents the size of HashSet where we are
+ * storing our elements
+ */
+/*
+ * Solution 3: Optimised Approach 2
+ *
+ * Approach: In this approach, we will make a map that will take care of
+ * counting the elements and maintaining the frequency of each and every element
+ * as a unity by taking the latest index of every element.
+ */

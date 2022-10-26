@@ -15,86 +15,75 @@
 
 //  * Definition for singly-linked list.
 class ReverseLinkedList {
-
-    public static Node head;
-
     public static class Node {
-
-        int data;
         Node next;
+        int data;
+    }
 
-        Node(int d) {
-            data = d;
-            next = null;
+    public static class LinkedList {
+        Node head;
+        Node tail;
+        int size;
+
+        public void printList() {
+            if (head == null) {
+                System.out.println("linkedlist is empty");
+            }
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+            System.out.println();
+        }
+
+        public void addFirst(int value) {
+            Node temp = new Node();
+            temp.data = value;
+            temp.next = head;
+            head = temp;
+            if (size == 0) {
+                tail = temp;
+            }
+            size++;
+        }
+
+        public void removeFirst() {
+            if (size == 0) {
+                System.out.println("linkedlist is empty");
+            } else if (size == 1) {
+                head = tail = null;
+                size = 0;
+            } else {
+                head = head.next;
+                size--;
+            }
+        }
+
+        public void reversePI() {
+            Node prev = null;
+            Node current = head;
+
+            while (current != null) {
+                Node upcoming = current.next;
+                current.next = prev;
+                prev = current;
+                current = upcoming;
+            }
+            Node temp = head;
+            head = tail;
+            tail = temp;
         }
     }
 
-    /* Function to reverse the linked list */
-    public static Node reverse(Node node) {
-        Node prev = null;
-        Node current = node;
-        Node next = null;
-        while (current != null) {
-            next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
-        }
-        node = prev;
-        return node;
-    }
-
-    // prints content of double linked list
-    public static void printList(Node node) {
-        while (node != null) {
-            System.out.print(node.data + " ");
-            node = node.next;
-        }
-    }
-
-    // Driver Code
     public static void main(String[] args) {
-        // ReverseLinkedList list = new ReverseLinkedList();
-        ReverseLinkedList.head = new Node(85);
-        ReverseLinkedList.head.next = new Node(15);
-        ReverseLinkedList.head.next.next = new Node(4);
-        ReverseLinkedList.head.next.next.next = new Node(20);
-
-        System.out.println("Given linked list");
-        ReverseLinkedList.printList(head);
-        head = ReverseLinkedList.reverse(head);
-        System.out.println("");
-        System.out.println("Reversed linked list ");
-        ReverseLinkedList.printList(head);
+        LinkedList l = new LinkedList();
+        l.addFirst(1);
+        l.addFirst(2);
+        l.addFirst(3);
+        l.addFirst(4);
+        l.printList();
+        l.reversePI();
+        l.printList();
     }
 }
-// TC - O(N)
-// SC - O(1)
-
-/*
- * Reverse Linked List: Iterative
- * We will use three-pointers to traverse through the entire list and
- * interchange links between nodes. One pointer to keep track of the current
- * node in the list. The second one is to keep track of the previous node to the
- * current node and change links. Lastly, a pointer to keep track of nodes in
- * front of current nodes.
- *
- *
- * STEP 1:
- *
- * currrent_p is a pointer to keep track of current nodes. Set it to head.
- * prev_p is a pointer to keep track of previous nodes. Set it to NULL.
- * next_p is a pointer to keep track of the next nodes.
- * STEP 2:
- *
- * Set next_p to point next node to node pointed by current_p.
- * Change link between nodes pointed by current_p and prev_p.
- * Update prev_p to current_p and current_p pointer to next_p.
- * Perform STEP 2 until current_p reaches the end of the list.
- *
- * STEP 3:
- *
- * Set head as prev_p. This makes the head point at the last node.
- * !https://takeuforward.org/data-structure/reverse-a-linked-list/
- * https://www.geeksforgeeks.org/reverse-a-linked-list/
- */

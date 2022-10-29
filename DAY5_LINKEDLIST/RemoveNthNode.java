@@ -84,3 +84,9 @@ class RemoveNthNode {
  *
  * Space Complexity: O(1)
  */
+/*
+ * https://www.geeksforgeeks.org/remove-nth-node-from-end-of-the-linked-list/
+ *
+ * https://takeuforward.org/data-structure/remove-n-th-node-from-the-end-of-a-
+ * linked-list/
+ */

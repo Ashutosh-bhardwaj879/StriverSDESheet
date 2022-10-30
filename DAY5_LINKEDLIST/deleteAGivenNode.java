@@ -93,3 +93,12 @@ class DeleteGivenNode {
         l1.printList();
     }
 }
+/*
+ * Time Complexity: O(1)
+ *
+ * Reason: It is a two-step process that can be obtained in constant time.
+ *
+ * Space Complexity: O(1)
+ *
+ * Reason: No extra data structure is used.
+ */
